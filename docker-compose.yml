@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  hms:
+    build: .
+    container_name: hospital_management_system
+    ports:
+      - "8000:80"
+    volumes:
+      - ./sessions:/var/www/html/sessions
+      - ./backups:/var/www/html/backups
+      - ./public/uploads:/var/www/html/public/uploads
+      - ./database.sqlite:/var/www/html/database.sqlite
+    restart: unless-stopped

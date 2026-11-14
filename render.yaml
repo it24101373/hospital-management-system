@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: hospital-management-system
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+    healthCheckPath: /index.php?page=login
+    envVars:
+      - key: PORT
+        value: 10000

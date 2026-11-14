@@ -1,0 +1,25 @@
+# Hospital Management System (HMS) - Apache Server Configuration
+
+# Disable Directory Browsing
+Options -Indexes
+
+# Protect Sensitive Data & Database Files from Direct Web Access
+<FilesMatch "(\.sqlite|\.db|\.log|\.bat|\.sh|composer\.json|package\.json)$">
+    Require all denied
+</FilesMatch>
+
+# Protect Internal Directories
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(config|models|controllers|sessions|backups)/ - [F,L,NC]
+</IfModule>
+
+# Set Default Charset
+AddDefaultCharset UTF-8
+
+# PHP Configuration Overrides if applicable
+<IfModule mod_php.c>
+    php_value session.gc_maxlifetime 1800
+    php_value upload_max_filesize 20M
+    php_value post_max_size 25M
+</IfModule>

@@ -1,0 +1,21 @@
+# Sessions temp files (keep directory)
+sessions/*
+!sessions/.gitkeep
+
+# Backups snapshots (keep directory)
+backups/*
+!backups/.gitkeep
+
+# Uploads (keep directory)
+public/uploads/*
+!public/uploads/.gitkeep
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary & Log files
+*.log
+*.tmp
