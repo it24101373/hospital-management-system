@@ -14,6 +14,7 @@ touch /var/www/html/database.sqlite
 chown -R www-data:www-data /var/www/html/sessions /var/www/html/backups /var/www/html/public/uploads /var/www/html/database.sqlite
 chmod -R 777 /var/www/html/sessions /var/www/html/backups /var/www/html/public/uploads
 chmod 666 /var/www/html/database.sqlite
+chown www-data:www-data /var/www/html
 
 echo "Hospital Management System starting on port ${HTTP_PORT}..."
 exec apache2-foreground
