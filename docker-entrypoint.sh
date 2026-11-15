@@ -9,7 +9,6 @@ sed -i "s/Listen 80/Listen ${HTTP_PORT}/" /etc/apache2/ports.conf
 sed -i "s/<VirtualHost \*:80>/<VirtualHost \*:${HTTP_PORT}>/" /etc/apache2/sites-available/000-default.conf
 
 # Ensure permissions
-# Ensure permissions
 mkdir -p /var/www/html/sessions /var/www/html/backups /var/www/html/public/uploads
 touch /var/www/html/database.sqlite
 chown -R www-data:www-data /var/www/html/sessions /var/www/html/backups /var/www/html/public/uploads /var/www/html/database.sqlite
