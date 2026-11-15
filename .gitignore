@@ -19,3 +19,6 @@ Desktop.ini
 # Temporary & Log files
 *.log
 *.tmp
+
+# Database
+database.sqlite
